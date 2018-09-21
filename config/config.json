@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "exampledb2",
+    "username": "ueg4kx8vjm8gzqtu",
+    "password": "mz13zdfvxzg0ehrd",
+    "database": "opbdr6d6ad82utzr",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
