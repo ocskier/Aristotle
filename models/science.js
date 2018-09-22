@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var English = sequelize.define("English", {
+  var Science = sequelize.define("Science", {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     url: {
@@ -10,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return English;
+  return Science;
 };
