@@ -3,7 +3,6 @@ var _ = require("lodash")
 
 module.exports = function(app) {
   // Get all Lesson Plans from a given subject
-
   app.get("/api/subject/:subject/grade/:grade", function(req, res) {
     var queryVar = _.capitalize(req.params.subject);
 
