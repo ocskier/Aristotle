@@ -1,55 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Passport Authentication Examnple</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="/stylesheets/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Tables Page</title>
+  
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">
-          Example App with Auth
-      </a>
-    </div>
-    <div class="member-name-wrapper pull-right">Welcome <span class="member-name"></span>
-      <a href="/logout">Logout</a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-          <h2>This is our Home Page!</h2>
 
-          <form class="clearfix mb-4" action="POST">
-            <div class="form-group">
-              <label for="example-text">Example Text</label>
-              <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-            </div>
-            <div class="form-group">
-              <label for="example-description">Example Description</label>
-              <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-            </div>
-            <button id="submit" class="btn btn-primary float-right">Submit</button>
-          </form>
+<nav class="deep-purple lighten-1" role="navigation" style="height: 80px">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" ><img src="" style="width:48px"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" style="line-height: 80px;">Link</a></li>
+      </ul>
 
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            
-          </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <div class="member-name-wrapper pull-right">Welcome <span class="member-name"></span>
+        <a href="/logout">Logout</a>
       </div>
     </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center">Title</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern application utilizing full-stack web development!</h5>
+      </div>
+      <div class="row center justify-content-center">
+        <a href="/friends" id="download-button" class="btn-large waves-effect waves-light deep-purple lighten-4" style="margin-right: 10px">View People</a>
+        <a href="/questions" id="download-button" class="btn-large waves-effect waves-light deep-purple lighten-4" style="margin-left: 10px">Add A Profile</a>
+      </div>
+      <br><br>
+
+    </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+          <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                <h5 class="center">Speeds up development</h5>
+    
+                <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+              </div>
+            </div>
+    
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                <h5 class="center">User Experience Focused</h5>
+    
+                <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+              </div>
+            </div>
+    
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                <h5 class="center">Easy to work with</h5>
+    
+                <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer deep-purple lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a href="/api/friends" class="white-text">API Table Link</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a href="/api/match" class="white-text">API Match</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <script type="text/javascript" src="/js/members.js"></script>
 
 </body>
 
 </html>
+  
