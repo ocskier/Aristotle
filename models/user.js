@@ -38,7 +38,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     grade: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    region: {
+      type: DataTypes.STRING,
       allowNull: false
     }
   });

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var SocialStudies = sequelize.define("SocialStudies", {
+  var Science = sequelize.define("Science", {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     url: {
@@ -10,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return SocialStudies;
+  return Science;
 };
