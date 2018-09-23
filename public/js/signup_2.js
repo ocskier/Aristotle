@@ -9,6 +9,7 @@ $(document).ready(function() {
 
   var nameInput = $("input#name-input");
   var emailInput = $("input#email-input");
+  // var passwordInput = $("input#password-input");
   var subjectInput = $("input#subject-input");
   var ageGroupInput = $("input#age-input");
 
@@ -17,20 +18,20 @@ $(document).ready(function() {
     var userDataSignUp = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
-      subject: subjectInput.val().trim(),
-      ageGroup: ageGroupInput.val().trim(),
+      // password: passwordInput.val("0"),
+      subject: subjectInput.val(),
+      ageGroup: ageGroupInput.val()
     };
     // console.log(userDataSignUp);
 
-    signUp(userDataSignUp.name. userDataSignUp.email, userDataSignUp.subject, userDataSignUp.ageGroup);
+    signUp(userDataSignUp.name, userDataSignUp.email, userDataSignUp.subject, userDataSignUp.ageGroup);
     nameInput.val("");
     emailInput.val("");
     subjectInput.val("");
-    ageGroup.val("");
-
+    ageGroupInput.val("");
   });
 
-  function signUp(name, email, subject, ageGroup){
+  function signUp(name, email, subject, ageGroup) {
     $.post("api/signup", {
       name: name,
       email: email,
@@ -40,6 +41,4 @@ $(document).ready(function() {
       console.log(data);
     });
   }
-
-
 });
