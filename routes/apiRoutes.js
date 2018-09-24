@@ -1,9 +1,14 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all Social Studies Lesson Plans
-  app.get("/api/socialstudies", function(req, res) {
-    db.SocialStudies.findAll({}).then(function(dbSocialStudies) {
+  // Get all Lesson Plans from a given subject
+  app.get("/api/subject/:subject/grade/:grade", function(req, res) {
+    db.SocialStudies.findAll({
+      where: {
+        subject: req.params.subject,
+        grade: req.params.grade
+      }
+    }).then(function(dbSocialStudies) {
       res.json(dbSocialStudies);
     });
   });
@@ -17,23 +22,22 @@ module.exports = function(app) {
 
   // Get all Science Lesson Plans
   app.get("/api/science", function(req, res) {
-    db.Science.findAll({}).then(function(dbSocialStudies) {
-      res.json(dbSocialStudies);
+    db.Science.findAll({}).then(function(dbScience) {
+      res.json(dbScience);
     });
   });
 
   // Get all English Lesson Plans
   app.get("/api/english", function(req, res) {
-    db.English.findAll({}).then(function(dbSocialStudies) {
-      res.json(dbSocialStudies);
+    db.English.findAll({}).then(function(dbEnglish) {
+      res.json(dbEnglish);
     });
   });
 
-  // Get an example by id
-  app.get("/api/examples/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExamples
-    ) {
+  // Get a lesson plan by grade level
+  app.get("/api/science/:subject", function(req, res) {
+    db.Example.findAll({ where: { subject: req.params.subject } }).then(
+      function(dbExamples) {
       res.json(dbExamples);
     });
   });
