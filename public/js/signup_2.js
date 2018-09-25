@@ -11,7 +11,7 @@ $(document).ready(function() {
   var passwordInput = $("input#password-input");
   var subjectInput = $("#subject-input");
   var ageGroupInput = $("#age-input");
-
+  //collects data on click event
   $("#submit").on("click", function(event) {
     event.preventDefault();
     var userDataSignUp = {
