@@ -65,7 +65,7 @@
 
               </select>
               <!-- <label>Materialize Select</label> -->
-            </div>e
+            </div>
             <!-- Age Group -->
             <div class="input-field col s12">
               <select class="browser-default" id="age-input">
@@ -125,7 +125,12 @@
   <script type="text/javascript" src="js/signup_passport.js"></script>
   <script type="text/javascript" src="js/signup_2.js"></script>
 
- 
+ <script>
+   //*****  for dropdown menu  *********
+   document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll("select");
+    var instances = M.FormSelect.init(elems); //left options out of init()
+  });</script>
 
 </body>
 

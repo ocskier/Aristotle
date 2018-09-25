@@ -1,11 +1,10 @@
 $(document).ready(function() {
-//*****  for dropdown menu  *********
+  //*****  for dropdown menu  *********
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var elems = document.querySelectorAll("select");
-    var instances = M.FormSelect.init(elems, options);
-  });
-
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   var elems = document.querySelectorAll("select");
+  //   var instances = M.FormSelect.init(elems, options);
+  // });
 
   var nameInput = $("input#name-input");
   var emailInput = $("input#email-input");
@@ -24,7 +23,13 @@ $(document).ready(function() {
     };
     console.log(userDataSignUp);
 
-    signUp(userDataSignUp.name, userDataSignUp.email, userDataSignUp.password, userDataSignUp.subject, userDataSignUp.ageGroup);
+    signUp(
+      userDataSignUp.name,
+      userDataSignUp.email,
+      userDataSignUp.password,
+      userDataSignUp.subject,
+      userDataSignUp.ageGroup
+    );
     nameInput.val("");
     emailInput.val("");
     passwordInput.val("");
@@ -39,7 +44,7 @@ $(document).ready(function() {
       password: password,
       subject: subject,
       ageGroup: ageGroup
-    }).then(function(data){
+    }).then(function(data) {
       console.log(data);
     });
   }
