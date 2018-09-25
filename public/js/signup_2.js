@@ -33,8 +33,6 @@ $(document).ready(function() {
     nameInput.val("");
     emailInput.val("");
     passwordInput.val("");
-    // subjectInput.val("");
-    // ageGroupInput.val("");
   });
 
   function signUp(name, email, password, subject, ageGroup) {
