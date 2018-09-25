@@ -1,5 +1,5 @@
 var db = require("../models");
-var _ = require("lodash")
+var _ = require("lodash");
 
 module.exports = function(app) {
   // Get all Lesson Plans from a given subject
@@ -32,7 +32,7 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       subject: req.body.subject,
-      ageGroup: req.body.grade,
+      ageGroup: req.body.grade
       // region: req.body.region
     }).then(function(response) {
       res.json(response);
