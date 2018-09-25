@@ -28,13 +28,12 @@ module.exports = function(app) {
   // create a new user at signup
   app.post("/api/signup", function(req, res) {
     db.User.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password,
         subject: req.body.subject,
-        grade: req.body.grade,
-        region: req.body.region
+        ageGroup: req.body.grade,
+        // region: req.body.region
     }).then(function(response) {
         res.json(response)
     })
