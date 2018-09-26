@@ -1,5 +1,5 @@
 var db = require("../models");
-var _ = require("lodash")
+var _ = require("lodash");
 
 module.exports = function(app) {
   // Get all Lesson Plans from a given subject
@@ -27,23 +27,26 @@ module.exports = function(app) {
 
   // create a new user at signup
   app.post("/api/signup", function(req, res) {
+    console.log(req);
     db.User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        subject: req.body.subject,
-        ageGroup: req.body.grade,
-        // region: req.body.region
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      subject: req.body.subject,
+      ageGroup: req.body.grade
+      // region: req.body.region
     }).then(function(response) {
-        res.json(response)
-    })
-  })
+      res.json(response);
+    });
+  });
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     var queryVar = _.capitalize(req.params.subject);
-    db[queryVar].destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
+    db[queryVar]
+      .destroy({ where: { id: req.params.id } })
+      .then(function(dbExample) {
+        res.json(dbExample);
+      });
   });
 };
