@@ -36,14 +36,14 @@ module.exports = function(app) {
 
   //Route for user to access their profile information
   app.get("/members/profile/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/stylesheets/profile.html"));
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
   });
   //Routes to display all lesson plan params selected using one html file
   app.get("/members/lessons/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/stylesheets/lessons.html"));
+    res.sendFile(path.join(__dirname, "../public/lessons.html"));
   });
 
   app.get("/members/plan/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/stylesheets/plan.html"));
+    res.sendFile(path.join(__dirname, "../public/plan.html"));
   });
 };
