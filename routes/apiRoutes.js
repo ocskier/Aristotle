@@ -17,8 +17,8 @@ module.exports = function(app) {
       });
   });
 
-  // Create a new example
-  app.post("/api/subject/:subject", function(req, res) {
+  // Create a new lesson plan
+  app.post("/api/subject/:subject/lessons", function(req, res) {
     var queryVar = _.capitalize(req.params.subject);
     db[queryVar].create(req.body).then(function(dbExample) {
       res.json(dbExample);
@@ -27,20 +27,22 @@ module.exports = function(app) {
 
   // create a new user at signup
   app.post("/api/signup", function(req, res) {
+    console.log(req.body);
+    console.log(req.body.name);
     db.User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       subject: req.body.subject,
-      ageGroup: req.body.grade
+      ageGroup: req.body.ageGroup
       // region: req.body.region
     }).then(function(response) {
       res.json(response);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
+  // Delete a user by id
+  app.delete("/api/users/:id", function(req, res) {
     var queryVar = _.capitalize(req.params.subject);
     db[queryVar]
       .destroy({ where: { id: req.params.id } })
