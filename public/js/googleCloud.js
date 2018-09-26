@@ -22,6 +22,7 @@
  */
 
 'use strict';
+var apiKey = AIzaSyBtPCjkPMGm9GeLIrg9CkzvJaGVJvrVh4Q
 
 function listFiles(bucketName) {
   // [START storage_list_files]
