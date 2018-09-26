@@ -21,7 +21,7 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/htmlRoutes.js")(app);
-// require("./routes/authRoutes.js")(app);
+require("./routes/authRoutes.js")(app);
 require("./routes/apiRoutes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
