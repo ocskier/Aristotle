@@ -23,6 +23,7 @@
 
 'use strict';
 
+
 function listFiles(bucketName) {
   // [START storage_list_files]
   // Imports the Google Cloud client library
