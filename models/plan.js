@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-  var Science = sequelize.define("Science", {
+  var Plan = sequelize.define("Plan", {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
+    subject: DataTypes.STRING,
     grade: DataTypes.STRING,
     url: {
       type: DataTypes.STRING,
@@ -11,5 +12,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return Science;
+  return Plan;
 };
