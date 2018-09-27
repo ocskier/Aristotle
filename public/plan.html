@@ -20,20 +20,30 @@
 
     <nav class="blue-grey lighten-3" role="navigation" style="height: 80px">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" ><img src="" style="width:48px"></a>
-          <!-- <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down">
             <li><a href="#" style="line-height: 80px;">Link</a></li>
-          </ul> -->
+          </ul>
     
           <ul id="nav-mobile" class="sidenav">
             <li><a href="#">Navbar Link</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <!-- <div class="member-name-wrapper pull-right">Welcome <span class="member-name"></span>
+          <div class="member-name-wrapper pull-right">Welcome <span class="member-name"></span>
             <a href="/logout">Logout</a>
-          </div> -->
+          </div>
         </div>
     </nav>
 
+    <div id = "plans-row" class="row" style="margin-top:20px">
+      
+      <div class="card" style="width:260px;float: left;border: 2px solid;margin: 5px"><p>What is Lorem Ipsum?
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div>
+      <div class="card" style="width:260px;float: left;border: 2px solid;margin: 5px"><p>What is Lorem Ipsum?
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div>
+      <div class="card" style="width:260px;float: left;border: 2px solid;margin: 5px"><p>What is Lorem Ipsum?
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div>
+
+    </div>
 
 
   
@@ -42,7 +52,7 @@
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Company Bio</h5>
+              <!-- <h5 class="white-text">Company Bio</h5> -->
               <p class="grey-text text-lighten-4">We are a team of college students</p>
             </div>
             <!-- <div class="col l3 s12">
@@ -65,12 +75,19 @@
           </div>
         </div>
       </footer>
+    
     <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
-      <script type="text/javascript" src="js/signup_passport.js"></script>
-      <script type="text/javascript" src="js/signup_2.js"></script>
+      <script type="text/javascript" src="/js/signup_passport.js"></script>
+      <script type="text/javascript" src="/js/signup_2.js"></script>
       <script>
+
+          $("#plans-row").on("click", function(event) {
+            //   var url = $(this).data("url");
+            window.location.href='/members/lessons/';
+          });
+
           (function($){
             $(function(){
   
