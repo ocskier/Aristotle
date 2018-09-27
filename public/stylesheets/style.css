@@ -15,6 +15,10 @@ form.login {
   line-height: 2.5;
 }
 
+<<<<<<< HEAD
+h3, h4, h5{
+  font-family: 'Dancing Script', cursive;
+=======
 .modal { width: 72% !important; max-height: 100%  !important;}
 
 body {
@@ -31,4 +35,5 @@ body {
 
 .carousel-item {
   /* width : 100%; */
+>>>>>>> a465850bd54602b259d4975b784ce33dcdc75ba7
 }
