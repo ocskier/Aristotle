@@ -34,7 +34,7 @@ $(".modal").modal({
 $("#lessons-row").on("click", ".active", function() {
   //   var url = $(this).data("url");
   var cardText = $(".active .card p").text();
-  $("#matchCard span").text(cardText);
+  $("#matchCard .modal-content p").text(cardText);
   var instance = M.Modal.getInstance($("#modal1"));
   instance.open();
 });
