@@ -52,5 +52,9 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    User.belongsToMany(models.Plan, { through: models.UserPlan });
+  };
   return User;
 };
