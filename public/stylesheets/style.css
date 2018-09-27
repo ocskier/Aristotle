@@ -25,7 +25,7 @@ body {
 
 .carousel, #plans-row {
   flex: 1 0 auto;
-  /* top: -50px; */
+  top: -60px;
   overflow: initial
 }
 
