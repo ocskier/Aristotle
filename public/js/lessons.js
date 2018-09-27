@@ -31,6 +31,8 @@ $(".modal").modal({
   //   onOpenEnd: function() {}
 });
 
+runLessonsQuery();
+
 $("#lessons-row").on("click", ".active", function() {
   //   var url = $(this).data("url");
   var cardText = $(".active .card p").text();
