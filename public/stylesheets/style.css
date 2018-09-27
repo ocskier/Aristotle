@@ -23,8 +23,12 @@ body {
   flex-direction: column;
 }
 
-.carousel {
+.carousel, #plans-row {
   flex: 1 0 auto;
-  top: -50px;
+  /* top: -50px; */
   overflow: initial
+}
+
+.carousel-item {
+  /* width : 100%; */
 }
