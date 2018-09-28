@@ -8,7 +8,7 @@ module.exports = function(app) {
     db.Plan.findAll({
       where: {
         subject: req.params.subject,
-        grade: req.params.grade
+        // grade: req.params.grade
       }
     }).then(function(dbExample) {
       res.json(dbExample);
@@ -27,12 +27,18 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/userPlan", function(req, res) {
-    db.UserPlan.create({
-      UserId: req.user.id,
-      PlanId: req.body.PlanId
-    }).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/userPlan/:title", function(req, res) {
+    db.Plan.findOne({
+      where: {
+        title: req.params.title
+      }
+    }).then((value) => {
+      db.UserPlan.create({
+        // UserId: req.user.id,
+        PlanId: value.id
+      }).then(function(dbExample) {
+        res.json(dbExample);
+      });
     });
   });
 
@@ -43,7 +49,7 @@ module.exports = function(app) {
       title: req.body.title,
       description: req.body.description,
       subject: req.body.subject,
-      ageGroup: req.body.ageGroup
+      ageGroup: req.body.grade
     }).then(function(dbExample) {
       res.json(dbExample);
     });

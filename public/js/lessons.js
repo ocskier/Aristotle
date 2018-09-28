@@ -1,8 +1,9 @@
 function runLessonsQuery() {
   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
-    var subject = "Science";
-    var ageGroup = "Middle School";
+    var subject = data.subject;
+    var ageGroup = data.ageGroup;
+    console.log(subject,ageGroup);
 
     $.ajax({ url: "/api/" + ageGroup + "/" + subject, method: "GET" }).then(
       function(data) {
@@ -38,8 +39,11 @@ var saveButton = $("#modal-save");
 
 saveButton.on("click", function(e) {
   e.preventDefault();
-  var newLesson = {};
-  $.post("/api/userPlan", function(data) {
+
+  savedTitle = $("#matchCard .modal-content h4").text();
+  // savedDescrip = $("#matchCard .modal-content p").value();
+
+  $.post("/api/userPlan/" + savedTitle, function(data) {
     console.log(data);
   });
 });

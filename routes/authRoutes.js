@@ -53,8 +53,8 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        subject: req.body.subject, 
-        ageGroup: req.body.ageGroup
+        subject: req.body.subject,
+        ageGroup: req.body.grade
       });
     }
   });
