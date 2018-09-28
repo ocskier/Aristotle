@@ -1,8 +1,8 @@
 function runLessonsQuery() {
   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
-    var subject = "math";
-    var ageGroup = "Elementary";
+    var subject = "Science";
+    var ageGroup = "Middle School";
 
     $.ajax({ url: "/api/" + ageGroup + "/" + subject, method: "GET" }).then(
       function(data) {
@@ -11,19 +11,19 @@ function runLessonsQuery() {
         console.log("------------------------------------");
         console.log(2);
         // Loop through and display each of the customers
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < data.length; i++) {
           // Get a reference to the tableList element and populate it with tables
           console.log(data[i]);
           var lessonsList = $("#lessons-row");
 
           var newCarouselA = $(
-            '<a class="carousel-item" href="#'+(i+1)+'!" style="width:240px;"></a>'
+            '<a class="carousel-item" href="#'+(i+1)+'!" style="width:240px;overflow:hidden"></a>'
           );
           var newCardDiv = $('<div class="card blue-grey darken-1">');
           var newCardContentDiv = $('<div class="card-content white-text">');
           newCardContentDiv.append(
-            $('<span class="card-title">' + data[0].title + "</span>"),
-            $("<p>" + data[0].description + "</p>")
+            $('<span class="card-title">' + data[i].title + "</span>"),
+            $("<p>" + data[i].description + "</p>")
           );
           newCardDiv.append(newCardContentDiv);
           newCarouselA.append(newCardDiv);
