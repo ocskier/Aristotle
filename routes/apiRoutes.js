@@ -32,10 +32,10 @@ module.exports = function(app) {
       where: {
         title: req.params.title
       }
-    }).then((value) => {
+    }).then(function(dbExample) {
       db.UserPlan.create({
         // UserId: req.user.id,
-        PlanId: value.id
+        PlanId: dbExample.id
       }).then(function(dbExample) {
         res.json(dbExample);
       });
@@ -49,7 +49,7 @@ module.exports = function(app) {
       title: req.body.title,
       description: req.body.description,
       subject: req.body.subject,
-      ageGroup: req.body.grade
+      grade: req.body.grade
     }).then(function(dbExample) {
       res.json(dbExample);
     });
@@ -77,5 +77,4 @@ module.exports = function(app) {
       });
     });
   };
-
 };

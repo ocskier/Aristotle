@@ -1,9 +1,12 @@
 function runLessonsQuery() {
   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
-    var subject = data.subject;
-    var ageGroup = data.ageGroup;
-    console.log(subject,ageGroup);
+    // var subject = data.subject;
+    // var ageGroup = data.grade;
+    // console.log(subject, ageGroup);
+
+    var subject = "science";
+    var ageGroup = "Middle School";
 
     $.ajax({ url: "/api/" + ageGroup + "/" + subject, method: "GET" }).then(
       function(data) {
