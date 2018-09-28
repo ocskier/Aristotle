@@ -104,7 +104,7 @@ background-size: cover;">
             <!-- profile-page-content -->
             <div id="profile-page-content" class="row">
               <!-- profile-page-sidebar-->
-              <div id="profile-page-sidebar" class="col s6 m4">
+              <div id="profile-page-sidebar" class="col s4 m4">
                 <!-- Profile About  -->
                 <div class="card cyan">
                   <div class="card-content white-text">
@@ -131,10 +131,12 @@ background-size: cover;">
                   </li>
                 </ul>
               </div>
-                
+
+              
+              
                 <!-- Lesson List -->
                 <div id="lesson-list" >
-                  <div class="col s6">                  
+                  <div class="col s4">                  
                       <div class="card-profile-title">
                         <div class="row">
                           <div class="col s12 collection">
@@ -145,7 +147,7 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
+                              <a href="#modal1" class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>        
                             <li class="collection-item avatar">
                               <i class="material-icons circle">folder</i>
@@ -153,7 +155,7 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
+                              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                             </li>       
                             <li class="collection-item avatar">
                               <i class="material-icons circle">folder</i>
@@ -161,30 +163,80 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
-                            </li> 
-                            <!-- Modal Trigger -->
-                            <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
-
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                              <div id="matchCard" class="modal-content" style="width:85%;margin:0 auto">
-                                  <div class="modal-content" style="padding: 0 8px">
-                                    <h4 class="center">Lesson</h4>
-                                    <p class="grey-text text-darken-4" style="font-size: 18px"></p>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <a href="#!" class="modal-close waves-effect waves-green left">Back</a>
-                                  </div>
-                              </div>
-                          </div>                  
+                              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>                   
                           </div>
                         </div>
                       </div>                                         
                   </div>
                 </div>
                 
+                <!-- Modal Trigger -->
+                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                  </div>
+                </div>
               <!--/ profile-page-wall -->
+
+                <!-- Lesson List -->
+                <div id="lesson-input" >
+                    <div class="col s4">                  
+                        <div class="card-profile-title">
+                          <div class="row">
+                            <div class="col s12 card">
+                                <div class="row">
+                                    <form class="col s12">
+                                      <div class="row">
+                                        <div class="input-field col s12">
+                                          <textarea id="text-title" class="materialize-textarea"></textarea>
+                                          <label for="textarea1">Title</label>
+                                        </div>
+                                      </div>                           
+                                    </div>  
+                                      <div class="row">
+                                        <div class="input-field col s12">
+                                          <textarea id="text-body" class="materialize-textarea"></textarea>
+                                          <label for="textarea1">Lesson</label>
+                                                    <!-- Subject -->           
+                                          <div class="input-field col s12">
+                                              <select class="browser-default" id="subject-input-lesson">
+                                                <option value="" disabled selected>Subject</option>
+                                                <option value="math">Math</option>
+                                                <option value="science">Science</option>
+                                                <option value="socialStudies">Social Studies</option>
+                                                <option value="englishLiterature">English/Literature</option>
+                                
+                                              </select>
+                                              <!-- <label>Materialize Select</label> -->
+                                            </div>
+                                            <!-- Age Group -->
+                                            <div class="input-field col s12">
+                                              <select class="browser-default" id="age-input-lesson">
+                                                <option value="" disabled selected>Age Group</option>
+                                                <option value="elementary">Elementary</option>
+                                                <option value="middleSchool">Middle School</option>
+                                                <option value="highSchool">High School</option>
+                                              </select>
+                                              <!-- <label>Materialize Select</label> -->
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-default blue-grey darken-1" id="submit-text">Submit</button>
+                                      </div>
+                                    </form>
+                                  </div>               
+                            </div>
+                          </div>
+                        </div>                                         
+                    </div>
+                  </div>
             </div>
           </div>
           
@@ -219,17 +271,18 @@ background-size: cover;">
   <script>
     (function($){
       $(function(){
-        // $("#modal1").on("click", function() {
-        // //   var url = $(this).data("url");
-        //   // var cardText = $(".active .card p").text();
-        //   // $("#matchCard .modal-content p").text(cardText);
-        //   var instance = M.Modal.getInstance($("#modal1"));
-        //   instance.open();
-        // });
+
         $('.sidenav').sidenav();
-        $('.modal').modal();
         M.AutoInit();
+
+        $(document).ready(function(){
+        $('.modal').modal();
       });      
+      $(function(){
+
+        $(document).ready(function(){
+        $('.modal').modal();
+        }); // end of document ready
     })(jQuery); // end of jQuery name space
   </script>
     
