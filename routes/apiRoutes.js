@@ -7,8 +7,8 @@ module.exports = function(app) {
     console.log(req.params.grade);
     db.Plan.findAll({
       where: {
-        subject: req.params.subject
-        // ,grade: req.params.grade
+        subject: req.params.subject,
+        grade: req.params.grade
       }
     }).then(function(dbExample) {
       res.json(dbExample);
