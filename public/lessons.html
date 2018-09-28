@@ -40,7 +40,6 @@
 
     <h4 class="center">Lessons</h4>
     <div id = "lessons-row" class="row carousel valign-wrapper">
-
       <div id="modal1" class="modal">
           <div id="matchCard" class="modal-content" style="width:85%;margin:0 auto">
               <div class="modal-content" style="padding: 0 8px">
@@ -91,20 +90,15 @@
       <script type="text/javascript" src="/js/signup_2.js"></script>
       <script type="text/javascript" src="/js/lessons.js"></script>
       <script>
-        (function($){
-          $(function(){
-            
-            $('.sidenav').sidenav();
-            // $('.carousel').carousel();
-            // M.AutoInit();
-            
-          }); // end of document ready
-        })(jQuery); // end of jQuery name space
         $(document).ready(function(){
+          setTimeout(function(){
+            console.log(1);
           $('.carousel').carousel();
+          $('.sidenav').sidenav();
+          M.AutoInit();
+          },600);
         });
       </script>
-     
     </body>
     
     </html>

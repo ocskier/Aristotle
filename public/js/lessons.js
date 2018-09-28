@@ -1,32 +1,33 @@
 function runLessonsQuery() {
   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
-    var subject = "math";
-    var ageGroup = "Elementary";
+    var subject = "Science";
+    var ageGroup = "Middle School";
 
     $.ajax({ url: "/api/" + ageGroup + "/" + subject, method: "GET" }).then(
       function(data) {
         // Here we then log the tableData to console, where it will show up as an object.
         console.log(data);
         console.log("------------------------------------");
-
+        console.log(2);
         // Loop through and display each of the customers
         for (var i = 0; i < data.length; i++) {
           // Get a reference to the tableList element and populate it with tables
           console.log(data[i]);
           var lessonsList = $("#lessons-row");
 
-          var newCardA = $(
-            '<a class="carousel-item" href="" target="blank" style="width:310px;"></a>'
+          var newCarouselA = $(
+            '<a class="carousel-item" href="#'+(i+1)+'!" style="width:240px;overflow:hidden"></a>'
           );
-          newCardA
-            .append(
-              $(
-                '<img src="https://images.unsplash.com/photo-1528459199957-0ff28496a7f6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a17975ae0832c15daee9763fe6ad9892&auto=format&fit=crop&w=682&q=80" alt="Portfolio Pic">'
-              )
-            )
-            .append($('<p class="ctr-txt white-text">Lesson Plan</p>')); //data[i].text
-          lessonsList.append(newCardA);
+          var newCardDiv = $('<div class="card blue-grey darken-1">');
+          var newCardContentDiv = $('<div class="card-content white-text">');
+          newCardContentDiv.append(
+            $('<span class="card-title">' + data[i].title + "</span>"),
+            $("<p>" + data[i].description + "</p>")
+          );
+          newCardDiv.append(newCardContentDiv);
+          newCarouselA.append(newCardDiv);
+          lessonsList.append(newCarouselA);
         }
       }
     );
@@ -51,8 +52,10 @@ runLessonsQuery();
 
 $("#lessons-row").on("click", ".active", function() {
   //   var url = $(this).data("url");
-  var cardText = $(".active .card p").text();
-  $("#matchCard .modal-content p").text(cardText);
+  var cardDescrip = $(".active .card .card-content p").text();
+  var cardTitle = $(".active .card .card-content span").text();
+  $("#matchCard .modal-content h4").text(cardTitle);
+  $("#matchCard .modal-content p").text(cardDescrip);
   var instance = M.Modal.getInstance($("#modal1"));
   instance.open();
 });
