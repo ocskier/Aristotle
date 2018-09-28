@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Plan = sequelize.define("Plan", {
+    author: DataTypes.STRING,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     subject: DataTypes.STRING,
@@ -12,5 +13,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  Plan.associate = function(models) {
+    Plan.belongsToMany(models.User, { through: models.UserPlan } );
+  };
   return Plan;
 };
