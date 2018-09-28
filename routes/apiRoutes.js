@@ -32,13 +32,12 @@ module.exports = function(app) {
 
   // Create a new lesson plan
   app.post("/api/lesson", function(req, res) {
+    console.log(req.body);
     db.Plan.create({
-      author: req.body.author,
       title: req.body.title,
       description: req.body.description,
       subject: req.body.subject,
-      ageGroup: req.body.ageGroup,
-      url: req.body.url
+      ageGroup: req.body.ageGroup
     }).then(function(dbExample) {
       res.json(dbExample);
     });

@@ -1,15 +1,14 @@
-$(document).ready(function () {
-
+$(document).ready(function() {
   var textTitle = $("input#text-title");
   var textBody = $("input#text-body");
   var textSubject = $("#subject-input-lesson");
-  var textAge = $("#age-input-lesson")
+  var textAge = $("#age-input-lesson");
 
   $("#submit-text").on("click", function (event) {
     event.preventDefault();
     var userTextInput = {
       title: textTitle.val().trim(),
-      body: textBody.val().trim(),
+      description: textBody.val().trim(),
       subject: textSubject.val(),
       ageGroup: textAge.val()
     };
@@ -18,7 +17,7 @@ $(document).ready(function () {
 
     submitLesson(
       userTextInput.title,
-      userTextInput.body,
+      userTextInput.description,
       userTextInput.subject,
       userTextInput.ageGroup
     );
@@ -27,13 +26,13 @@ $(document).ready(function () {
     textBody.val("");
   });
 
-  function submitLesson(title, body) {
-    $.post("api/lesson", {
+  function submitLesson(title, description, subject, ageGroup) {
+    $.post("/api/lesson", {
       title: title,
-      body: body,
+      description: description,
       subject: subject,
       ageGroup: ageGroup
-    }).then(function (data) {
+    }).then(function(data) {
       console.log(data);
     });
   }

@@ -13,6 +13,7 @@ $(document).ready(function() {
   var ageGroupInput = $("#age-input");
   //collects data on click event
   $("#submit").on("click", function(event) {
+    console.log("You have clicked this message");
     event.preventDefault();
     var userDataSignUp = {
       name: nameInput.val().trim(),
