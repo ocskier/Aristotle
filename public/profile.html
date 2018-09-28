@@ -16,25 +16,27 @@
   
 </head>
 
-<body background ="images/sharon-mccutcheon-532782-unsplash.jpg" style="no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;">
-  <nav class="orange lighten-3" role="navigation" style="height: 100px">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" ><img src="" style="width:48px"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/members/lessons/" style="padding-top: 12px;line-height: 80px;">Search Lessons</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <div class="member-name-wrapper pull-right">  <h4>Welcome to Aristotle</h4>  <span class="member-name"></span>
-       <a href="/logout">Logout</a>
+<body background ="images/sharon-mccutcheon-532782-unsplash.jpg" style="no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+  
+  <nav class="orange lighten-3" role="navigation" style="height: 80px">
+      <div class="nav-wrapper container">
+        <!-- <a id="logo-container" href="#" class="brand-logo" ><img src="" style="width:48px"></a> -->
+        <div class="left hide-on-med-and-down">
+          <div><a href="#" style="line-height: 80px;"><h4>Welcome to Aristotle</h4></a></div>
+        </div>
+        <div class="center hide-on-med-and-up">
+            <a href="#" style="line-height: 80px;"><h4>Aristotle</h4></a>
+        </div>
+        <a href="/lessons/"  class="hide-on-med-and-down" style="line-height: 80px;top: 0;left: 47%;position: absolute;">Search Lessons</a>
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="/lessons/">Search Lessons</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger" style="top: -10px;left: 0;position: absolute"><i class="material-icons">menu</i></a>
+        <div class="member-name-wrapper right pull-right hide-on-med-and-down" style="font-size: 1.68rem;"><span class="member-name"></span>
+          <a href="/logout">Logout</a>
+        </div>
       </div>
-    </div>
   </nav>
 
   <!-- *******************Add documents************** -->
@@ -242,9 +244,6 @@ background-size: cover;">
     </div>
 
 
-
-  
-
   <footer class="page-footer orange lighten-3">
       <div class="container">
         <!-- <div class="row">
@@ -266,6 +265,18 @@ background-size: cover;">
   <script type="text/javascript" src="/js/signup_passport.js"></script>
   <script type="text/javascript" src="/js/signup_2.js"></script>
   <script type="text/javascript" src="/js/profile.js"></script>   
+  <script>
+    (function($){
+      $(function(){
+
+        $('.sidenav').sidenav();
+        
+        M.AutoInit();
+        
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+
 </body>
   
 </html>
