@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
   
 </head>
 
@@ -145,7 +145,7 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#modal1" class="secondary-content"><i class="material-icons">grade</i></a>
+                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
                             </li>        
                             <li class="collection-item avatar">
                               <i class="material-icons circle">folder</i>
@@ -153,7 +153,7 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
                             </li>       
                             <li class="collection-item avatar">
                               <i class="material-icons circle">folder</i>
@@ -161,27 +161,29 @@ background-size: cover;">
                               <p>First Line <br>
                                  Second Line
                               </p>
-                              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                            </li>                   
+                              <a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>
+                            </li> 
+                            <!-- Modal Trigger -->
+                            <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                              <div id="matchCard" class="modal-content" style="width:85%;margin:0 auto">
+                                  <div class="modal-content" style="padding: 0 8px">
+                                    <h4 class="center">Lesson</h4>
+                                    <p class="grey-text text-darken-4" style="font-size: 18px"></p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <a href="#!" class="modal-close waves-effect waves-green left">Back</a>
+                                  </div>
+                              </div>
+                          </div>                  
                           </div>
                         </div>
                       </div>                                         
                   </div>
                 </div>
                 
-                <!-- Modal Trigger -->
-                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
-
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                  <div class="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
-                  </div>
-                  <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                  </div>
-                </div>
               <!--/ profile-page-wall -->
             </div>
           </div>
@@ -217,18 +219,17 @@ background-size: cover;">
   <script>
     (function($){
       $(function(){
-
+        // $("#modal1").on("click", function() {
+        // //   var url = $(this).data("url");
+        //   // var cardText = $(".active .card p").text();
+        //   // $("#matchCard .modal-content p").text(cardText);
+        //   var instance = M.Modal.getInstance($("#modal1"));
+        //   instance.open();
+        // });
         $('.sidenav').sidenav();
+        $('.modal').modal();
         M.AutoInit();
-
-        $(document).ready(function(){
-        $('.modal').modal();
       });      
-      $(function(){
-
-        $(document).ready(function(){
-        $('.modal').modal();
-        }); // end of document ready
     })(jQuery); // end of jQuery name space
   </script>
     
