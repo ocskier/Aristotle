@@ -25,8 +25,10 @@ function runLessonsQuery() {
   });
 }
 
-$.post({ url: "/api/userPlan", method: "POST" },newLesson).then(function(data) {});
-
+var newLesson="";
+$.post("/api/userPlan", newLesson,function(data) {
+  console.log(data);
+});
 
 $(".modal").modal({
   //   onOpenEnd: function() {}
