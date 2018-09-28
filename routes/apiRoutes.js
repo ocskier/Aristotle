@@ -43,7 +43,7 @@ module.exports = function(app) {
       title: req.body.title,
       description: req.body.description,
       subject: req.body.subject,
-      ageGroup: req.body.ageGroup
+      grade: req.body.grade
     }).then(function(dbExample) {
       res.json(dbExample);
     });
