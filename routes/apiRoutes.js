@@ -34,7 +34,7 @@ module.exports = function(app) {
       }
     }).then(function(dbExample) {
       db.UserPlan.create({
-        // UserId: req.user.id,
+        UserId: "3",
         PlanId: dbExample.id
       }).then(function(dbExample) {
         res.json(dbExample);
