@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var textTitle = $("input#text-title");
-  var textBody = $("input#text-body");
+  var textTitle = $("textarea#text-title");
+  var textBody = $("textarea#text-body");
   var textSubject = $("#subject-input-lesson");
   var textAge = $("#age-input-lesson");
 
