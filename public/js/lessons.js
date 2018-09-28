@@ -25,24 +25,15 @@ function runLessonsQuery() {
   });
 }
 
-var saveButton = $('#modal-save');
+var saveButton = $("#modal-save");
 
-
-saveButton.on('click', function(e) {
-	e.preventDefault();
-	var newLesson= {
-	
-	}
-	$.post("/api/userPlan", {
-
-	}function(data) {
-		console.log(data);
-	});
-})
-
-
-
-
+saveButton.on("click", function(e) {
+  e.preventDefault();
+  var newLesson = {};
+  $.post("/api/userPlan", function(data) {
+    console.log(data);
+  });
+});
 
 $(".modal").modal({
   //   onOpenEnd: function() {}
