@@ -25,6 +25,11 @@ function runLessonsQuery() {
   });
 }
 
+var newLesson="";
+$.post("/api/userPlan", newLesson,function(data) {
+  console.log(data);
+});
+
 $(".modal").modal({
   //   onOpenEnd: function() {}
 });
@@ -38,5 +43,3 @@ $("#lessons-row").on("click", ".active", function() {
   var instance = M.Modal.getInstance($("#modal1"));
   instance.open();
 });
-
-runLessonsQuery();
