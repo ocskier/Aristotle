@@ -16,9 +16,14 @@ form.login {
 }
 
 
-h3, h4, h5{
+h3, h4, h5,nav,footer {
   font-family: 'Dancing Script', cursive;
 }
+
+nav,footer {
+  font-size: 20px;
+}
+
 .modal { width: 72% !important; max-height: 100%  !important;}
 
 body {
