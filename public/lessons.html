@@ -41,14 +41,6 @@
     <h4 class="center">Lessons</h4>
     <div id = "lessons-row" class="row carousel valign-wrapper">
 
-      <a class="carousel-item" style="width: 320px"><div class="card" style="border: 1px solid;"><p>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div></a>
-      <a class="carousel-item" style="width: 320px"><div class="card"><p>What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div></a>
-      <a class="carousel-item" style="width: 320px"><div class="card"><p>What is Lorem Ipsum?
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div></a>
-      <a class="carousel-item" style="width: 320px"><div class="card"><p>What is Lorem Ipsum?
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.></p></div></a>
-
       <div id="modal1" class="modal">
           <div id="matchCard" class="modal-content" style="width:85%;margin:0 auto">
               <div class="modal-content" style="padding: 0 8px">
@@ -101,13 +93,16 @@
       <script>
         (function($){
           $(function(){
-
+            
             $('.sidenav').sidenav();
-            $('.carousel').carousel();
-            M.AutoInit();
+            // $('.carousel').carousel();
+            // M.AutoInit();
             
           }); // end of document ready
         })(jQuery); // end of jQuery name space
+        $(document).ready(function(){
+          $('.carousel').carousel();
+        });
       </script>
      
     </body>

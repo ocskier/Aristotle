@@ -2,9 +2,15 @@ var db = require("../models");
 // var _ = require("lodash");
 
 module.exports = function(app) {
-  // Get all Lesson Plans from a given subject
-  app.get("/api/lesson", function(req, res) {
-    db.Plan.findAll({}).then(function(dbExample) {
+  // Get all Lesson Plans from a given subject and grade
+  app.get("/api/:grade/:subject/", function(req, res) {
+    console.log(req.params.grade);
+    db.Plan.findAll({
+      where: {
+        subject: req.params.subject
+        // ,grade: req.params.grade
+      }
+    }).then(function(dbExample) {
       res.json(dbExample);
     });
   });
