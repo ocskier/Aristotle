@@ -19,6 +19,10 @@ form.login {
 h3, h4, h5{
   font-family: 'Dancing Script', cursive;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b970d3134e43afd2715477cd44933b6d7cf21ef4
 .modal { width: 72% !important; max-height: 100%  !important;}
 
 body {
@@ -27,7 +31,7 @@ body {
   flex-direction: column;
 }
 
-.carousel, #plans-row {
+.carousel, #plans-row, .wrapper {
   flex: 1 0 auto;
   top: -60px;
   overflow: initial
@@ -35,5 +39,4 @@ body {
 
 .carousel-item {
   /* width : 100%; */
->>>>>>> a465850bd54602b259d4975b784ce33dcdc75ba7
 }
