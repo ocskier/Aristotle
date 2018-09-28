@@ -1,6 +1,6 @@
 function runLessonsQuery() {
   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-  $.ajax({ url: "/api/members/lessons", method: "GET" }).then(function(data) {
+  $.ajax({ url: "/api/lessons", method: "GET" }).then(function(data) {
     // Here we then log the tableData to console, where it will show up as an object.
     console.log(data);
     console.log("------------------------------------");
@@ -25,10 +25,24 @@ function runLessonsQuery() {
   });
 }
 
-var newLesson="";
-$.post("/api/userPlan", newLesson,function(data) {
-  console.log(data);
-});
+var saveButton = $('#modal-save');
+
+
+saveButton.on('click', function(e) {
+	e.preventDefault();
+	var newLesson= {
+	
+	}
+	$.post("/api/userPlan", {
+
+	}function(data) {
+		console.log(data);
+	});
+})
+
+
+
+
 
 $(".modal").modal({
   //   onOpenEnd: function() {}
