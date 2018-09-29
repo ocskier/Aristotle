@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    ageGroup: {
+    grade: {
       type: DataTypes.STRING,
       allowNull: false
     }
