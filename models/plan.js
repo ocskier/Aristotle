@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     grade: DataTypes.STRING
   });
   Plan.associate = function(models) {
-    Plan.belongsToMany(models.User, { through: models.UserPlan } );
+    Plan.belongsToMany(models.User, { through: models.UserPlan });
   };
   return Plan;
 };
