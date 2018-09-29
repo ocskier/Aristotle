@@ -15,17 +15,17 @@ module.exports = function(app) {
     });
   });
 
-  // // Get all Lesson Plans saved by a User
-  // app.get("/api/userPlan", function(req, res) {
-  //   db.Plan.findAll({
-  //     include: [{
-  //       model: UserPlan,
-  //       where: {
-  //           UserId: "3"
-  //       }
-  //     }]
-  //   });
-  // });
+  // Get all Lesson Plans saved by a User
+  app.get("/api/userPlan", function(req, res) {
+    db.Plan.findAll({
+      include: [{
+        model: db.User,
+        where: { id: "3" }
+      }]
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
 
   app.post("/api/userPlan/:title", function(req, res) {
     db.Plan.findOne({
