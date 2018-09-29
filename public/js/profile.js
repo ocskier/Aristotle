@@ -31,12 +31,12 @@ $(document).ready(function() {
       title: title,
       description: description,
       subject: subject,
-      ageGroup: ageGroup
+      grade: ageGroup
     }).then(function(data) {
       console.log(data);
     });
   }
-
+  
   $.ajax({ url: "/api/userPlan", method: "GET" }).then(function(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
