@@ -54,8 +54,8 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        subject: req.body.subject,
-        grade: req.body.grade
+        subject: req.user.subject,
+        grade: req.user.grade
       });
     }
   });

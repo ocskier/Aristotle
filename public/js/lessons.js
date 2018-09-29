@@ -3,7 +3,7 @@ function runLessonsQuery() {
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
     // var subject = data.subject;
     // var ageGroup = data.grade;
-    // console.log(subject, ageGroup);
+    console.log(subject, ageGroup);
 
     var subject = "science";
     var ageGroup = "Middle School";
