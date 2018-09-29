@@ -41,3 +41,9 @@ body {
 .carousel-item {
   /* width : 100%; */
 }
+
+#mainContent{
+  min-height: 80vh;
+  background-color: #fff;
+};
+
