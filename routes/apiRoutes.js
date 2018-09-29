@@ -16,14 +16,14 @@ module.exports = function(app) {
   });
 
   // Get all Lesson Plans saved by a User
-  app.get("/api/:id/:planId", function(req, res) {
-    db.UserPlan.findAll({
-      where: {
-        UserId: req.params.UserId,
-        PlanId: req.params.PlanId
-      }
-    }).then(function(dbExample) {
-      res.json(dbExample);
+  app.get("/api/userPlan", function(req, res) {
+    db.Plan.findAll({
+      include: [{
+        model: UserPlan,
+        where: {
+            UserId: "3"
+        }
+      }]
     });
   });
 

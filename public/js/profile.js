@@ -38,14 +38,16 @@ $(document).ready(function() {
   }
 
   $.ajax({ url: "/api/userPlan", method: "GET" }).then(function(data) {
+    console.log(data);
     for (let i = 0; i < data.length; i++) {
       var newLi = $('<li class="collection-item avatar">');
       newLi.append(
-        $('<i class="material-icons circle">folder</i>'),
-        $('<span class="title">'+data[i].title+'</span>'),
-        $(' <p>'+data[i].description+'</p>'),
-        $('<a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>')
-      )
+      $('<i class="material-icons circle">folder</i>'),
+      $('<span class="title">'+data[i].title+'</span>'),
+      $(' <p>'+data[i].description+'</p>'),
+      $('<a href="#modal1" class="secondary-content modal-trigger" data-target="modal1"><i class="material-icons">grade</i></a>')
+      );
+      $('#savedLessonsRow').append(newLi);
     }  
   });
 });
