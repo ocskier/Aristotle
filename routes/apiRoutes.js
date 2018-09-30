@@ -3,13 +3,14 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all Lesson Plans from a given subject and grade
-  app.get("/api/lessons/:grade/:subject/", function(req, res) {
+  app.get("/api/lessons/:grade/:subject", function(req, res) {
     db.Plan.findAll({
       where: {
         subject: req.params.subject,
         grade: req.params.grade
       }
     }).then(function(dbExample) {
+      console.log(dbExample);
       res.json(dbExample);
     });
   });
