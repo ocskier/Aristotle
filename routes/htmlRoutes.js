@@ -16,7 +16,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      req.session.save(function (err) {
+      req.session.save(function(err) {
         if (err) {
           // ... panic!
         }
@@ -40,13 +40,13 @@ module.exports = function(app) {
   });
 
   //Route for user to access their profile information
-  app.get("/profile/*", function(req, res) {
+  app.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/profile.html"));
   });
-  //Routes to display all lesson plan params selected using one html file
-  app.get("/lessons/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/lessons.html"));
-  });
+  // //Routes to display all lesson plan params selected using one html file
+  // app.get("/lessons/*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/lessons.html"));
+  // });
 
   //   app.get("/members/plan/*", function(req, res) {
   //     res.sendFile(path.join(__dirname, "../public/plan.html"));
