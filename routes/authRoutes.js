@@ -7,7 +7,6 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    console.log(req.body);
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
@@ -52,10 +51,11 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
+        name:req.user.name,
         email: req.user.email,
         id: req.user.id,
-        subject: req.body.subject,
-        grade: req.body.grade
+        subject: req.user.subject,
+        grade: req.user.grade
       });
     }
   });

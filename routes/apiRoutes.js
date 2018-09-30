@@ -3,12 +3,11 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all Lesson Plans from a given subject and grade
-  app.get("/api/:grade/:subject/", function(req, res) {
-    console.log(req.params.grade);
+  app.get("/api/lessons/:grade/:subject/", function(req, res) {
     db.Plan.findAll({
       where: {
         subject: req.params.subject,
-        // grade: req.params.grade
+        grade: req.params.grade
       }
     }).then(function(dbExample) {
       res.json(dbExample);
@@ -16,25 +15,28 @@ module.exports = function(app) {
   });
 
   // Get all Lesson Plans saved by a User
-  app.get("/api/userPlan", function(req, res) {
+  app.get("/api/userPlan/:userId", function(req, res) {
+    console.log(req);
     db.Plan.findAll({
-      include: [{
-        model: db.User,
-        where: { id: "3" }
-      }]
+      include: [
+        {
+          model: db.User,
+          where: { id: req.params.userId }
+        }
+      ]
     }).then(function(data) {
       res.json(data);
     });
   });
 
-  app.post("/api/userPlan/:title", function(req, res) {
+  app.post("/api/userPlan/:userId/:title", function(req, res) {
     db.Plan.findOne({
       where: {
         title: req.params.title
       }
     }).then(function(dbExample) {
       db.UserPlan.create({
-        UserId: "3",
+        UserId: req.params.userId,
         PlanId: dbExample.id
       }).then(function(dbExample) {
         res.json(dbExample);

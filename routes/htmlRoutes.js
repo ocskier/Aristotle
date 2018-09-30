@@ -16,7 +16,12 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/lessons");
+      req.session.save(function (err) {
+        if (err) {
+            // ... panic!
+        }
+        res.redirect("/lessons");
+      });
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
