@@ -18,7 +18,7 @@ module.exports = function(app) {
     if (req.user) {
       req.session.save(function (err) {
         if (err) {
-            // ... panic!
+          // ... panic!
         }
         res.redirect("/lessons");
       });
