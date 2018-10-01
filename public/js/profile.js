@@ -49,13 +49,15 @@ $(document).ready(function() {
   }
 
   $.ajax({ url: "/api/user_data", method: "GET" }).then(function(data) {
-    var name = data.name;
+
+    var name = data.name.split(" ").map((s) => s.charAt(0).toUpperCase()+s.substring(1)).join(" "); 
     var subject = data.subject;
     var grade = data.grade;
-    var userId = data.id;
+    var userId = data.id; 
     console.log(subject, name, grade, userId);
 
     $('#user-name').text(name);
+    $('#user-reveal-name').text(name);
     $('#subject-name').text(subject);
     $('#grade-name').text(grade);
 

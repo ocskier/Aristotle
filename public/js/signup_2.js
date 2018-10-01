@@ -45,22 +45,7 @@ $(document).ready(function() {
       grade: grade
     }).then(function(data) {
       console.log(data);
-      loginUser(emailInput, passwordInput);
+      window.location.replace(data);
     });
-  }
-
-  function loginUser(email, password) {
-    $.post("/api/login", {
-      email: email,
-      password: password
-    })
-      .then(function(data) {
-        window.location.replace(data);
-        // If there's an error, log the error
-        res.redirect("/lessons/");
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
   }
 });
