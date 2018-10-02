@@ -2,34 +2,6 @@ var db = require("../models");
 // var _ = require("lodash");
 
 module.exports = function(app) {
-  // Get all Lesson Plans from a given subject and grade
-  app.get("/api/lessons/:grade/:subject", function(req, res) {
-    db.Plan.findAll({
-      where: {
-        subject: req.params.subject,
-        grade: req.params.grade
-      }
-    }).then(function(dbExample) {
-      console.log(dbExample);
-      res.json(dbExample);
-    });
-  });
-
-  // Get all Lesson Plans saved by a User
-  app.get("/api/userPlan/:userId", function(req, res) {
-    console.log(req);
-    db.Plan.findAll({
-      include: [
-        {
-          model: db.User,
-          where: { id: req.params.userId }
-        }
-      ]
-    }).then(function(data) {
-      res.json(data);
-    });
-  });
-
   app.post("/api/userPlan/:userId/:title", function(req, res) {
     db.Plan.findOne({
       where: {
@@ -55,6 +27,24 @@ module.exports = function(app) {
       grade: req.body.grade
     }).then(function(dbExample) {
       res.json(dbExample);
+    });
+  });
+
+  app.put("/api/users/:id", function(req, res) {
+    console.log(req.body);
+    db.User.update(
+      {
+        subject: req.body.subject,
+        grade: req.body.grade
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(function() {
+      req.logout();
+      res.json("/login");
     });
   });
 
