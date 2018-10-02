@@ -31,7 +31,7 @@ $(document).ready(function() {
       .then(function(data) {
         window.location.replace(data);
         // If there's an error, log the error
-        res.redirect("/lessons/");
+        res.redirect("/lessons");
       })
       .catch(function(err) {
         console.log(err);

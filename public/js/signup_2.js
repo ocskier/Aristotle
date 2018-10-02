@@ -45,6 +45,7 @@ $(document).ready(function() {
       grade: grade
     }).then(function(data) {
       console.log(data);
+      window.location.replace(data);
     });
   }
 });

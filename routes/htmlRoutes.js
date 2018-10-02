@@ -1,6 +1,9 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 
+// Requiring our models
+var db = require("../models");
+
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -16,9 +19,9 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      req.session.save(function (err) {
+      req.session.save(function(err) {
         if (err) {
-            // ... panic!
+          // ... panic!
         }
         res.redirect("/lessons");
       });
@@ -31,7 +34,23 @@ module.exports = function(app) {
 
   // the "/lesson" is essentially the homepage
   app.get("/lessons", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/lessons.html"));
+    // Get all Lesson Plans from a given subject and grade
+    if (req.user) {
+      db.Plan.findAll({
+        where: {
+          subject: req.user.subject,
+          grade: req.user.grade
+        }
+      }).then(function(data) {
+        console.log(data);
+        var hdbrsObj = {
+          lessons: data
+        };
+        res.render("lessons", hdbrsObj);
+      });
+    } else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
   });
 
   //example from starter files, will not need
@@ -40,13 +59,34 @@ module.exports = function(app) {
   });
 
   //Route for user to access their profile information
-  app.get("/profile/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  app.get("/profile", function(req, res) { 
+    if (req.user) {
+      db.Plan.findAll({
+        include: [
+          {
+            model: db.User,
+            where: { id: req.user.id }
+          }
+        ]
+      }).then(function(data) {
+        var hdbrsObj = {
+          savedLessons : data,
+          user_name: req.user.name.split(" ").map((s) => s.charAt(0).toUpperCase()+s.substring(1)).join(" "),
+          user_subject: req.user.subject,
+          user_grade: req.user.grade
+        }
+        res.render("profile", hdbrsObj);
+      });
+    }
+    else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
   });
-  //Routes to display all lesson plan params selected using one html file
-  app.get("/lessons/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/lessons.html"));
-  });
+
+  // //Routes to display all lesson plan params selected using one html file
+  // app.get("/lessons/*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/lessons.html"));
+  // });
 
   //   app.get("/members/plan/*", function(req, res) {
   //     res.sendFile(path.join(__dirname, "../public/plan.html"));
