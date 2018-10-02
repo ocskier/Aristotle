@@ -2,24 +2,17 @@ var db = require("../models");
 // var _ = require("lodash");
 
 module.exports = function(app) {
-  app.post("/api/userPlan/:userId/:title", function(req, res) {
-    db.Plan.findOne({
-      where: {
-        title: req.params.title
-      }
+  app.post("/api/userPlan/:userId/:planId", function(req, res) {
+    db.UserPlan.create({
+      UserId: parseInt(req.params.userId),
+      PlanId: parseInt(req.params.planId)
     }).then(function(dbExample) {
-      db.UserPlan.create({
-        UserId: req.params.userId,
-        PlanId: dbExample.id
-      }).then(function(dbExample) {
-        res.json(dbExample);
-      });
+      res.json(dbExample);
     });
   });
 
   // Create a new lesson plan
   app.post("/api/lesson", function(req, res) {
-    console.log(req.body);
     db.Plan.create({
       title: req.body.title,
       description: req.body.description,
@@ -31,7 +24,6 @@ module.exports = function(app) {
   });
 
   app.put("/api/users/:id", function(req, res) {
-    console.log(req.body);
     db.User.update(
       {
         subject: req.body.subject,
@@ -39,7 +31,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          id: req.params.id
+          id: parseInt(req.params.id)
         }
       }
     ).then(function() {

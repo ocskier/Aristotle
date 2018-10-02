@@ -61,7 +61,6 @@ module.exports = function(app) {
   //Route for user to access their profile information
   app.get("/profile", function(req, res) { 
     if (req.user) {
-      console.log(req);
       db.Plan.findAll({
         include: [
           {
