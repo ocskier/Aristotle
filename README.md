@@ -1,2 +1,3 @@
-# Project2_Team7
-Project #2 made by Team 7
+# Aristotle
+
+An app for creating, building, and sharing lesson plans by grade level and subject
