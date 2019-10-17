@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 .env
 credentials.json
+config.json
